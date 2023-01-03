@@ -6,7 +6,7 @@ export default function Header() {
       <div className="header__left">
         <img width={38} height={38} src="./img/pizza-logo.svg" alt="logo" />
         <div className="title__container">
-          <h2 className="title">REACT PIZZA</h2>
+          <h2 className="header__title">REACT PIZZA</h2>
           <p className="subtitle">самая вкусная пицца во вселенной</p>
         </div>
       </div>
