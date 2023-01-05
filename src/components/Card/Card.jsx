@@ -1,6 +1,6 @@
 import "./Card.scss";
 
-export default function Card({ title, imgUrl, smallPrice }) {
+export default function Card({ title, imgUrl, smallPrice, onAddCart }) {
   return (
     <div className="card">
       <img width={260} height={260} src={imgUrl} alt="pizza" />

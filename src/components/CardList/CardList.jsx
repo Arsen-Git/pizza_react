@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 import axios from "axios";
 import "./CardList.scss";
 
-export default function CardList() {
+export default function CardList({ onAddCart }) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -20,6 +20,7 @@ export default function CardList() {
           imgUrl={item.imgUrl}
           title={item.title}
           smallPrice={item.smallPrice}
+          onAddCart={onAddCart}
         />
       ))}
     </div>

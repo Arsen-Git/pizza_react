@@ -1,6 +1,6 @@
 import "./Header.scss";
 
-export default function Header() {
+export default function Header({ onManageCart }) {
   return (
     <header className="container">
       <div className="header__left">
@@ -10,7 +10,7 @@ export default function Header() {
           <p className="subtitle">самая вкусная пицца во вселенной</p>
         </div>
       </div>
-      <div className="cart">
+      <div onClick={() => onManageCart()} className="cart">
         <p className="cart__price">520 ₴</p>
         <div className="line"></div>
         <div className="cart__items">
