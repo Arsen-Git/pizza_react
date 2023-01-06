@@ -19,7 +19,7 @@ export default function CardList({ onAddCart }) {
           key={item.id}
           imgUrl={item.imgUrl}
           title={item.title}
-          smallPrice={item.smallPrice}
+          prices={[item.smallPrice, item.mediumPrice, item.largePrice]}
           onAddCart={onAddCart}
         />
       ))}

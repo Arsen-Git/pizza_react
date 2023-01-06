@@ -1,4 +1,8 @@
 .container {
+  z-index: 1;
+  width: 93vw;
+  position: fixed;
+  background-color: #fff;
   border-bottom: 1px solid #f7f7f7;
   display: flex;
   justify-content: space-between;

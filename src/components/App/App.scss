@@ -4,9 +4,12 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 39px;
-  /* identical to box height */
 
   letter-spacing: 0.01em;
 
   color: #000000;
+}
+.block {
+  max-height: 100vh;
+  overflow: hidden;
 }

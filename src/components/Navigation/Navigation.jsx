@@ -1,6 +1,9 @@
 import "./Navigation.scss";
 
 export default function Navigation() {
+  const manageSort = (e) => {
+    e.target.nextSibling.classList.toggle("sort__container-active");
+  };
   return (
     <nav className="nav__container">
       <ul className="filter">
@@ -13,7 +16,9 @@ export default function Navigation() {
       </ul>
       <div className="sort">
         <p className="sort__text">Сортировка по:</p>
-        <p className="choosen">популярности</p>
+        <p onClick={manageSort} className="choosen">
+          популярности
+        </p>
         <div className="sort__container">
           <ul className="sort__menu">
             <li className="sort__item sort-active">популярности</li>

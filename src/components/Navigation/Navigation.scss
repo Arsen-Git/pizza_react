@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 48px 0 67px;
+  padding: 186px 48px 0 67px;
   .filter {
     display: flex;
     flex-wrap: wrap;
@@ -52,11 +52,18 @@
       letter-spacing: 0.015em;
 
       color: #fe5f1e;
+      &:hover {
+        transform: scale(1.05);
+      }
     }
     &__container {
+      &-active {
+        top: 25px;
+        right: 0px;
+      }
       position: absolute;
       top: 25px;
-      right: 0px;
+      right: -200px;
 
       padding: 10px 5px;
 
