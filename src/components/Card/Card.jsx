@@ -14,7 +14,13 @@ export default function Card({ title, imgUrl, prices, onAddCart }) {
       ? setActiveType(types.indexOf(e.target.textContent))
       : setActiveSize(sizes.indexOf(e.target.textContent));
   };
-  const onAdd = () => {
+  const onAdd = (e) => {
+    e.target.textContent = "\u{1F44D}";
+    e.target.classList.add("add-animation");
+    setTimeout(() => {
+      e.target.classList.remove("add-animation");
+      e.target.textContent = "Добавить";
+    }, 501);
     onAddCart({
       title,
       imgUrl,

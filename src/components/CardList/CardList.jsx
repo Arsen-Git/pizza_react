@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 import axios from "axios";
 import "./CardList.scss";
 
-export default function CardList({ onAddCart }) {
+export default function CardList({ onAddCart, filter, sort }) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -12,9 +12,26 @@ export default function CardList({ onAddCart }) {
       .get("https://6363becf37f2167d6f8223de.mockapi.io/items")
       .then((res) => setItems(res.data));
   }, []);
+
+  const filterItems = () => {
+    const filteredItems =
+      filter !== "Все"
+        ? items.filter((item) => item.types.includes(filter))
+        : items;
+    const sortedItems = filteredItems;
+    if (sort === "цене" || sort === "алфавиту") {
+      sort === "цене"
+        ? sortedItems.sort((a, b) => (a.smallPrice > b.smallPrice ? 1 : -1))
+        : sortedItems.sort((a, b) => (a.title > b.title ? 1 : -1));
+    } else {
+      sortedItems.sort((a, b) => (a.mediumPrice > b.mediumPrice ? 1 : -1));
+    }
+
+    return sortedItems;
+  };
   return (
     <div className="cards">
-      {items.map((item) => (
+      {filterItems().map((item) => (
         <Card
           key={item.id}
           imgUrl={item.imgUrl}

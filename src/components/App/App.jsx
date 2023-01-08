@@ -11,6 +11,8 @@ function App() {
   const [isCart, setIsCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [cartPrice, setCartPrice] = useState(0);
+  const [filter, setFilter] = useState("Все");
+  const [sort, setSort] = useState("популярности");
 
   const onManageCart = () => {
     document.body.classList.toggle("block");
@@ -30,6 +32,12 @@ function App() {
     setCartItems(newCart);
     setCartPrice(newPrice);
   };
+  const onFilter = (e) => {
+    setFilter(e.target.getAttribute("id"));
+  };
+  const onSort = (e) => {
+    setSort(e.target.getAttribute("id"));
+  };
   return (
     <>
       <Header
@@ -46,9 +54,14 @@ function App() {
           deleteFromCart={deleteFromCart}
         />
       ) : null}
-      <Navigation />
+      <Navigation
+        filter={filter}
+        sort={sort}
+        onFilter={onFilter}
+        onSort={onSort}
+      />
       <h1 className="title">Все пиццы</h1>
-      <CardList onAddCart={onAddCart} />
+      <CardList onAddCart={onAddCart} filter={filter} sort={sort} />
     </>
   );
 }
